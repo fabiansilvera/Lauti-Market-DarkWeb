@@ -1,0 +1,74 @@
+* {
+    cursor: url(/Cursor/Handwriting.cur), auto;
+}
+@font-face {
+    font-family: 'Avara';
+    src: url('font/Avara.otf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Avara';
+    text-transform: capitalize;
+}
+*,*:before,*:after {
+    box-sizing: inherit;
+}
+body {
+    background:  rgba(0,0,0,0.3) url("img/cuarto-oscuro-fotografia.jpg");
+    background-blend-mode: darken;
+    background-size: cover;
+    min-height: 100vh;
+    max-height: 100vh;
+    font-size: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+    margin: 5px 5px 5px 10%;
+}
+.draggable {
+    width: 276px;
+    height: 320px;
+    padding: 8px 8px 55px 8px;
+    background: rgb(208, 139, 83);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.grid > :nth-child(4n+2),
+.grid > :nth-child(4n+3) {
+    margin-top: 90px;
+}
+
+img {
+    width: 260px;
+    height: 260px;
+}
+
+.tittle {
+    text-align: center;
+    font-size: 50px;
+    line-height: 10px;
+    text-shadow: 5px;
+    padding-top: 10px;
+    color: wheat;
+}
+
+/* Agrega este código a tu archivo style.css */
+.div-img img {
+    transition: filter 0.2s; /* Agrega una transición suave */
+    mix-blend-mode:multiply;
+    left:8px;
+    top:8px;
+    right:8px;
+    bottom:55px;
+    filter:brightness(70%) contrast(150%) saturate(0%) brightness(150%) blur(15px); /* Aplica un efecto de desenfoque a la imagen */
+}
+
+.div-img:hover img {
+    filter:brightness(80%) contrast(100%) saturate(80%) brightness(130%) blur(0); /* Al hacer hover, elimina el efecto de desenfoque */
+}
